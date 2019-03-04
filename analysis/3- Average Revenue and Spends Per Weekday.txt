@@ -1,0 +1,6 @@
+SELECT to_char(t1.subscription_date, 'Day') AS Weekday,	   
+AVG(t1.net_revenue) AS Revenue, 
+AVG(t2.spendings) AS Spends
+FROM dwh.subscriptions t1
+INNER JOIN dwh.spendings t2 ON t1.marketing_channel_id = t2.marketing_channel_id
+GROUP BY Weekday;

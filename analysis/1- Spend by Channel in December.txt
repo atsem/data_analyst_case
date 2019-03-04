@@ -1,0 +1,7 @@
+SELECT marketing_channel_id AS Channel ID,
+       SUM(spendings) AS Spent
+FROM dwh.spendings
+WHERE report_date BETWEEN '2016-12-01' AND '2016-12-31'
+AND is_paid_channel = true
+GROUP BY marketing_channel_id
+ORDER BY marketing_channel_id ASC;
